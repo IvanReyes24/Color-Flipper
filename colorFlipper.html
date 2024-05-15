@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+	*{
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	.bg-color{
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		font-family: "Roboto", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	button{
+		padding: 10px 20px;
+		outline: none;
+		background-color: cornsilk;
+		border: 1px solid rgb(30, 131, 219);
+	}
+	
+</style>
+<body>
+	<div class="bg-color">
+		<div>
+			<h1>Color: <span class="color"></span></h1><br>
+			<button type="button" onclick="colorFlipper()">Click me</button>
+		</div>
+
+	</div>
+
+	<script>
+		let colors = [
+  "#FF5733", "#33FF57", "#3357FF", "#57FF33", "#5733FF", "#FF33A1", "#33FFA1", "#A133FF",
+  "#FF3380", "#3380FF", "#80FF33", "#8033FF", "#FF8033", "#33FF80", "#8033A1", "#33A1FF",
+  "#A1FF33", "#A13380", "#3380A1", "#A18033", "#80A133", "#FF33D4", "#33FFD4", "#D433FF",
+  "#FFD433", "#33FFB4", "#33B4FF", "#B4FF33", "#FFB433", "#B433FF", "#D4FF33", "#33D4FF",
+  "#FF33A6", "#33A6FF", "#A6FF33", "#FF3333", "#3333FF", "#FF33FF", "#33FF33", "#FF5733",
+  "#33FF57", "#5733FF", "#FF3357", "#57FF33", "#3357FF", "#A1FF33", "#FF5733", "#33FF57",
+  "#57FF33", "#3357FF", "#5733FF", "#33A1FF", "#33FFA1", "#FF33A1", "#33FF80", "#8033FF",
+  "#80FF33", "#3380FF", "#FF8033", "#33FF33", "#3333FF", "#FF33FF", "#57FF33", "#5733FF",
+  "#33FF57", "#FF3357", "#3357FF", "#FF5733", "#A1FF33", "#33A1FF", "#8033FF", "#3380FF",
+  "#80FF33", "#FF8033", "#33FF80", "#8033A1", "#FF33D4", "#D433FF", "#33FFD4", "#FFD433",
+  "#A1FF33", "#33A1FF", "#A133FF", "#33FF33", "#FF3333", "#3333FF", "#5733FF", "#33FF57",
+  "#FF5733", "#3357FF", "#57FF33", "#33FFA1", "#33FF80", "#FF33A1", "#3380FF", "#80FF33"
+];
+let  background_Div = document.querySelector(".bg-color"); 
+let colorHeader = document.querySelector(".color");
+
+function colorFlipper(){
+		
+		let randomNum = Math.floor(Math.random() * colors.length);
+		let randomColor = colors[randomNum];
+		background_Div.style.background = randomColor;
+		colorHeader.innerHTML = randomColor
+		console.log(randomColor);
+}
+
+
+	</script>
+</body>
+</html>
